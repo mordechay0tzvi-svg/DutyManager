@@ -32,17 +32,8 @@ def handle_add_soldier() -> None:
 
 
 def handle_remove_soldier() -> None:
-    """
-    מטפלת בתהליך הסרת חייל.
-    מקבלת קלט מהמשתמש וקוראת לפונקציות המתאימות.
-
-    מקבלת: כלום
-    מחזירה: כלום
-
-    למה הפונקציה קיימת:
-    הפרדה בין UI לבין לוגיקה עסקית.
-    """
-    pass
+    id = int(input())
+    remove_soldier(id)
 
 
 def handle_view_soldiers() -> None:
