@@ -6,10 +6,10 @@ from utils import *
 
 def add_duty_to_soldier(soldier_id: int, duty_name: str, day: str) -> None:
     soldier = find_soldier_by_id(soldier_id)
-    if soldier_has_duty(soldier, duty_name):
-        raise ValueError("Soldier already has this duty")
     if find_soldier_by_id(soldier_id) is None:
         raise ValueError("Soldier doesn't exist")
+    if soldier_has_duty(soldier, duty_name):
+        raise ValueError("Soldier already has this duty")
     if not is_valid_day(day):
         raise ValueError("Invalid day")
     duty = {'duty_name': duty_name, 'day': day, 'status': 'pending'}
