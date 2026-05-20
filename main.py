@@ -26,13 +26,13 @@ def get_user_choice() -> str:
 
 
 def handle_add_soldier() -> None:
-    name = get_user_choice()
-    id = int(get_user_choice())
+    name = input("name:")
+    id = int(input("id:"))
     add_soldier(id, name)
 
 
 def handle_remove_soldier() -> None:
-    id = int(input())
+    id = int(input("id:"))
     remove_soldier(id)
 
 
@@ -41,21 +41,21 @@ def handle_view_soldiers() -> None:
 
 
 def handle_add_duty() -> None:
-    id = int(get_user_choice())
-    duty_name = get_user_choice()
-    day = get_user_choice()
+    id = int(input("id:"))
+    duty_name = input("duty name:")
+    day = input("day")
     add_duty_to_soldier(id, duty_name,  day)
 
 
 def handle_update_duty_status() -> None:
-    id = int(get_user_choice())
-    duty = get_user_choice()
-    status = get_user_choice()
+    id = int(input("id:"))
+    duty = input("duty:")
+    status = input("status:")
     update_duty_status(id, duty, status)
 
 
 def handle_view_soldier_duties() -> None:
-    id = int(get_user_choice())
+    id = int(input("id:"))
     print(get_soldier_duties(id))
 
 
