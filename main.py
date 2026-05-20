@@ -6,7 +6,6 @@ from utils import *
 from soldier_manager import *
 from duty_manager import *
 
-
 def show_menu() -> None:
     print("============================")
     print("Welcome to Duty Manager")
@@ -89,6 +88,9 @@ def main() -> None:
             continue
         if choice == "7":
             break
+        else:
+            print("Invalid choice")
+            continue
 
 
 
