@@ -2,31 +2,20 @@
 # soldier_manager.py
 # אחריות: לוגיקה עסקית של ניהול חיילים
 # ============================================================================
+import utils
+from data import soldiers
+from utils import is_valid_name
+
 
 def add_soldier(soldier_id: int, name: str) -> None:
-    """
-    מוסיפה חייל חדש למערכת.
+    if not is_valid_name(name):
+        raise ValueError('name is not valid')
+    for soldier in soldiers:
+        if soldier["id"] == soldier_id:
+            raise ValueError("id already in system")
 
-    סוג: לוגיקה עסקית (Business Logic)
+    soldiers.append({"id": soldier_id, "name": name, 'duties' : []})
 
-    מקבלת:
-        soldier_id (int): מספר אישי של החייל
-        name (str): שם החייל
-
-    מחזירה:
-        None - הפונקציה מוסיפה את החייל או זורקת exception
-
-    זורקת:
-        ValueError: אם id כבר קיים במערכת
-        ValueError: אם name ריק או לא תקין
-
-    למה הפונקציה קיימת:
-    לוגיקה עסקית טהורה של הוספת חייל.
-    מבצעת בדיקות תקינות ומוסיפה את החייל לנתונים.
-    לא מטפלת בקלט/פלט - רק בלוגיקה.
-    זורקת exceptions במקרה של שגיאה במקום להחזיר False.
-    """
-    pass
 
 
 def remove_soldier(soldier_id: int) -> None:
