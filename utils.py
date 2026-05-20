@@ -50,6 +50,5 @@ def soldier_has_duty(soldier: dict, duty_name: str) -> bool:
             return True
     return False
 
-
 def is_valid_day(day: str) -> bool:
     return day in ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday']

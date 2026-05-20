@@ -2,32 +2,23 @@
 # duty_manager.py
 # אחריות: לוגיקה עסקית של ניהול תורנויות
 # ============================================================================
+from utils import *
+
 
 def add_duty_to_soldier(soldier_id: int, duty_name: str, day: str) -> None:
-    """
-    מוסיפה תורנות חדשה לחייל.
-
-    סוג: לוגיקה עסקית (Business Logic)
-
-    מקבלת:
-        soldier_id (int): מספר אישי של החייל
-        duty_name (str): שם התורנות
-        day (str): יום בשבוע (sunday/monday/tuesday/wednesday/thursday)
-
-    מחזירה:
-        None - הפונקציה מוסיפה את התורנות או זורקת exception
-
-    זורקת:
-        KeyError: אם חייל עם id זה לא נמצא במערכת
-        ValueError: אם תורנות עם שם זה כבר קיימת לחייל
-        ValueError: אם day לא חוקי (friday/saturday או ערך לא תקין)
-
-    למה הפונקציה קיימת:
-    לוגיקה עסקית של הוספת תורנות.
-    מבצעת בדיקות ומוסיפה תורנות לחייל.
-    זורקת exceptions במקרה של שגיאה במקום להחזיר False.
-    """
-    pass
+    soldier = find_soldier_by_id(soldier_id)
+    if soldier_has_duty(soldier, duty_name):
+        raise ValueError("Soldier already has this duty pending")
+    if find_soldier_by_id(soldier_id) is None:
+        raise ValueError("Soldier doesn't exist")
+    if not is_valid_day(day):
+        raise ValueError("Invalid day")
+    duty = {'duty_name': duty_name, 'day': day, 'status': 'pending'}
+    for soldier in soldiers:
+        if soldier['id'] == soldier_id:
+            soldier['duties'].append(duty)
+            break
+    return None
 
 
 def update_duty_status(soldier_id: int, duty_name: str, new_status: str) -> None:

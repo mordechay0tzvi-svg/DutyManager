@@ -2,9 +2,8 @@
 # soldier_manager.py
 # אחריות: לוגיקה עסקית של ניהול חיילים
 # ============================================================================
-import utils
 from data import soldiers
-from utils import is_valid_name
+from utils import *
 
 
 def add_soldier(soldier_id: int, name: str) -> None:
