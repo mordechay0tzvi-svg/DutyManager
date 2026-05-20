@@ -30,7 +30,7 @@ def is_valid_name(name: str) -> bool:
 
 def soldier_has_duty(soldier: dict, duty_name: str) -> bool:
     for duty in soldier['duties']:
-        if duty['name'] == duty_name and duty['status'] == 'pending':
+        if duty['name'] == duty_name:
             return True
     return False
 
