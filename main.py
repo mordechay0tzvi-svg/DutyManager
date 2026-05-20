@@ -37,17 +37,7 @@ def handle_remove_soldier() -> None:
 
 
 def handle_view_soldiers() -> None:
-    """
-    מטפלת בתהליך הצגת כל החיילים.
-    קוראת לפונקציה המתאימה ומציגה את התוצאה.
-
-    מקבלת: כלום
-    מחזירה: כלום
-
-    למה הפונקציה קיימת:
-    הפרדה בין קבלת הנתונים לבין הצגתם.
-    """
-    pass
+    print(get_all_soldiers())
 
 
 def handle_add_duty() -> None:
