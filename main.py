@@ -60,17 +60,30 @@ def handle_view_soldier_duties() -> None:
 
 
 def main() -> None:
-    """
-    הפונקציה הראשית של התוכנית.
-    מריצה לולאה ראשית שמציגה תפריט, מקבלת בחירה ומפעילה פעולה.
+    while True:
+        show_menu()
+        choice = get_user_choice()
+        if choice == "1":
+            handle_remove_soldier()
+            continue
+        if choice == "2":
+            handle_add_duty()
+            continue
+        if choice == "3":
+            handle_view_soldiers()
+            continue
+        if choice == "4":
+            handle_add_duty()
+            continue
+        if choice == "5":
+            handle_update_duty_status()
+            continue
+        if choice == "6":
+            handle_view_soldier_duties()
+            continue
+        if choice == "7":
+            break
 
-    מקבלת: כלום
-    מחזירה: כלום
-
-    למה הפונקציה קיימת:
-    נקודת הכניסה לתוכנית. מנהלת את הזרימה הראשית.
-    """
-    pass
 
 
 
