@@ -4,7 +4,6 @@
 # ============================================================================
 from utils import *
 
-
 def add_duty_to_soldier(soldier_id: int, duty_name: str, day: str) -> None:
     soldier = find_soldier_by_id(soldier_id)
     if soldier_has_duty(soldier, duty_name):
@@ -14,9 +13,9 @@ def add_duty_to_soldier(soldier_id: int, duty_name: str, day: str) -> None:
     if not is_valid_day(day):
         raise ValueError("Invalid day")
     duty = {'duty_name': duty_name, 'day': day, 'status': 'pending'}
-    for soldier in soldiers:
-        if soldier['id'] == soldier_id:
-            soldier['duties'].append(duty)
+    for s in soldiers:
+        if s['id'] == soldier_id:
+            s['duties'].append(duty)
             break
     return None
 
@@ -29,9 +28,9 @@ def update_duty_status(soldier_id: int, duty_name: str, new_status: str) -> None
         raise KeyError("Soldier doesn't exist")
     if not soldier_has_duty(soldier, duty_name):
         raise ValueError("Soldier already has this duty pending")
-    for soldier in soldiers:
-        if soldier['id'] == soldier_id:
-            soldier['duties'][duty_name] = new_status
+    for s in soldiers:
+        if s['id'] == soldier_id:
+            s['duties'][duty_name] = new_status
     return None
 
 
