@@ -48,17 +48,10 @@ def handle_add_duty() -> None:
 
 
 def handle_update_duty_status() -> None:
-    """
-    מטפלת בתהליך עדכון סטטוס תורנות.
-    מקבלת קלט מהמשתמש וקוראת לפונקציות המתאימות.
-
-    מקבלת: כלום
-    מחזירה: כלום
-
-    למה הפונקציה קיימת:
-    הפרדה בין UI לבין לוגיקה עסקית.
-    """
-    pass
+    id = int(get_user_choice())
+    duty = get_user_choice()
+    status = get_user_choice()
+    update_duty_status(id, duty, status)
 
 
 def handle_view_soldier_duties() -> None:
