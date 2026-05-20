@@ -36,25 +36,7 @@ def update_duty_status(soldier_id: int, duty_name: str, new_status: str) -> None
 
 
 def get_soldier_duties(soldier_id: int) -> list:
-
-    """
-    מחזירה את רשימת התורנויות של חייל.
-
-    סוג: גישה לנתונים (Data Access)
-
-    מקבלת:
-        soldier_id (int): מספר אישי של החייל
-
-    מחזירה:
-        list: רשימת תורנויות (מילונים)
-              רשימה ריקה אם אין תורנויות
-
-    זורקת:
-        KeyError: אם חייל עם id זה לא נמצא במערכת
-
-    למה הפונקציה קיימת:
-    גישה מבוקרת לתורנויות של חייל.
-    מפרידה בין הנתונים לבין הגישה אליהם.
-    זורקת exception אם החייל לא קיים (במקום להחזיר רשימה ריקה).
-    """
-    pass
+    soldier = find_soldier_by_id(soldier_id)
+    if soldier is None:
+        raise ValueError("Soldier doesn't exist")
+    return soldier['duties']
