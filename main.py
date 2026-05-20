@@ -2,6 +2,10 @@
 # main.py
 # אחריות: תפריט ראשי, קלט מהמשתמש, ניתוב לפונקציות
 # ============================================================================
+from utils import *
+from soldier_manager import *
+from duty_manager import *
+
 
 def show_menu() -> None:
     """
@@ -22,19 +26,9 @@ def get_user_choice() -> str:
 
 
 def handle_add_soldier() -> None:
-    """
-    מטפלת בתהליך הוספת חייל חדש.
-    מקבלת קלט מהמשתמש וקוראת לפונקציות המתאימות.
-
-    מקבלת: כלום
-    מחזירה: כלום
-
-    למה הפונקציה קיימת:
-    מפרידה בין הקלט/פלט לבין הלוגיקה העסקית.
-    main.py אחראי על אינטראקציה עם המשתמש,
-    soldier_manager.py אחראי על הלוגיקה.
-    """
-    pass
+    name = get_user_choice()
+    id = int(input())
+    add_soldier(id, name)
 
 
 def handle_remove_soldier() -> None:
