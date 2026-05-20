@@ -27,7 +27,7 @@ def get_user_choice() -> str:
 
 def handle_add_soldier() -> None:
     name = get_user_choice()
-    id = int(input())
+    id = int(get_user_choice())
     add_soldier(id, name)
 
 
@@ -41,17 +41,10 @@ def handle_view_soldiers() -> None:
 
 
 def handle_add_duty() -> None:
-    """
-    מטפלת בתהליך הוספת תורנות לחייל.
-    מקבלת קלט מהמשתמש וקוראת לפונקציות המתאימות.
-
-    מקבלת: כלום
-    מחזירה: כלום
-
-    למה הפונקציה קיימת:
-    הפרדה בין UI לבין לוגיקה עסקית.
-    """
-    pass
+    id = int(get_user_choice())
+    duty_name = get_user_choice()
+    day = get_user_choice()
+    add_duty_to_soldier(id, duty_name,  day)
 
 
 def handle_update_duty_status() -> None:
