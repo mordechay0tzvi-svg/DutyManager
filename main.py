@@ -55,17 +55,8 @@ def handle_update_duty_status() -> None:
 
 
 def handle_view_soldier_duties() -> None:
-    """
-    מטפלת בתהליך הצגת תורנויות של חייל.
-    מקבלת קלט מהמשתמש וקוראת לפונקציות המתאימות.
-
-    מקבלת: כלום
-    מחזירה: כלום
-
-    למה הפונקציה קיימת:
-    הפרדה בין UI לבין לוגיקה עסקית.
-    """
-    pass
+    id = int(get_user_choice())
+    print(get_soldier_duties(id))
 
 
 def main() -> None:
