@@ -29,22 +29,26 @@ def handle_add_soldier() -> None:
     name = input("name:")
     id = int(input("id:"))
     add_soldier(id, name)
+    print("======Soldier added======")
 
 
 def handle_remove_soldier() -> None:
     id = int(input("id:"))
     remove_soldier(id)
+    print("======Soldier removed======")
 
 
 def handle_view_soldiers() -> None:
     print(get_all_soldiers())
+    print("=======End of list=======")
 
 
 def handle_add_duty() -> None:
     id = int(input("id:"))
     duty_name = input("duty name:")
-    day = input("day")
+    day = input("day:")
     add_duty_to_soldier(id, duty_name,  day)
+    print("======Duty added======")
 
 
 def handle_update_duty_status() -> None:
@@ -52,11 +56,13 @@ def handle_update_duty_status() -> None:
     duty = input("duty:")
     status = input("status:")
     update_duty_status(id, duty, status)
+    print("=======Duty updated=======")
 
 
 def handle_view_soldier_duties() -> None:
     id = int(input("id:"))
     print(get_soldier_duties(id))
+    print("==================")
 
 
 def main() -> None:
