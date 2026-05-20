@@ -30,7 +30,10 @@ def update_duty_status(soldier_id: int, duty_name: str, new_status: str) -> None
         raise ValueError("Soldier already has this duty pending")
     for s in soldiers:
         if s['id'] == soldier_id:
-            s['duties'][duty_name] = new_status
+            duties = get_soldier_duties(soldier_id)
+            for d in duties:
+                if d['duty_name'] == duty_name:
+                    d['status'] = new_status
     return None
 
 
