@@ -13,7 +13,7 @@ def find_soldier_by_id(soldier_id: int) -> dict | None:
 
 def find_duty_by_name(duties: list, duty_name: str) -> dict | None:
     for duty in duties:
-        if duty['name'] == duty_name:
+        if duty['duty_name'] == duty_name:
             return duty
     return None
 
@@ -30,7 +30,7 @@ def is_valid_name(name: str) -> bool:
 
 def soldier_has_duty(soldier: dict, duty_name: str) -> bool:
     for duty in soldier['duties']:
-        if duty['name'] == duty_name:
+        if duty['duty_name'] == duty_name:
             return True
     return False
 

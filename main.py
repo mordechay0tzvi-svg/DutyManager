@@ -64,10 +64,10 @@ def main() -> None:
         show_menu()
         choice = get_user_choice()
         if choice == "1":
-            handle_remove_soldier()
+            handle_add_soldier()
             continue
         if choice == "2":
-            handle_add_duty()
+            handle_remove_soldier()
             continue
         if choice == "3":
             handle_view_soldiers()
@@ -86,4 +86,4 @@ def main() -> None:
 
 
 
-
+main()
