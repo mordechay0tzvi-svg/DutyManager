@@ -26,15 +26,21 @@ def get_user_choice() -> str:
 
 def handle_add_soldier() -> None:
     name = input("name:")
-    id = int(input("id:"))
-    add_soldier(id, name)
-    print("======Soldier added======")
+    try:
+        id = int(input("id:"))
+        add_soldier(id, name)
+        print("======Soldier added======")
+    except Exception as e:
+        print("Error:", e)
 
 
 def handle_remove_soldier() -> None:
-    id = int(input("id:"))
-    remove_soldier(id)
-    print("======Soldier removed======")
+    try:
+        id = int(input("id:"))
+        remove_soldier(id)
+        print("======Soldier removed======")
+    except Exception as e:
+        print("Error:", e)
 
 
 def handle_view_soldiers() -> None:
@@ -43,25 +49,34 @@ def handle_view_soldiers() -> None:
 
 
 def handle_add_duty() -> None:
-    id = int(input("id:"))
-    duty_name = input("duty name:")
-    day = input("day:")
-    add_duty_to_soldier(id, duty_name,  day)
-    print("======Duty added======")
+    try:
+        id = int(input("id:"))
+        duty_name = input("duty name:")
+        day = input("day:")
+        add_duty_to_soldier(id, duty_name,  day)
+        print("======Duty added======")
+    except Exception as e:
+        print("Error:", e)
 
 
 def handle_update_duty_status() -> None:
-    id = int(input("id:"))
-    duty = input("duty:")
-    status = input("status:")
-    update_duty_status(id, duty, status)
-    print("=======Duty updated=======")
+    try:
+        id = int(input("id:"))
+        duty = input("duty:")
+        status = input("status:")
+        update_duty_status(id, duty, status)
+        print("=======Duty updated=======")
+    except Exception as e:
+        print("Error:", e)
 
 
 def handle_view_soldier_duties() -> None:
-    id = int(input("id:"))
-    print(get_soldier_duties(id))
-    print("==================")
+    try:
+        id = int(input("id:"))
+        print(get_soldier_duties(id))
+        print("==================")
+    except Exception as e:
+        print("Error:", e)
 
 
 def main() -> None:
