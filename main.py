@@ -8,17 +8,17 @@ from duty_manager import *
 
 
 def show_menu() -> None:
-    """
-    מציגה את התפריט הראשי למשתמש.
-
-    מקבלת: כלום
-    מחזירה: כלום (מדפיסה לקונסול)
-
-    למה הפונקציה קיימת:
-    הפרדה בין הצגת התפריט לבין הלוגיקה העסקית.
-    אם נרצה לשנות את התצוגה, נשנה רק כאן.
-    """
-    pass
+    print("============================")
+    print("Welcome to Duty Manager")
+    print("===========================")
+    print("Choose an option:")
+    print("1. Add soldier")
+    print("2. Remove soldier")
+    print("3. See list of soldiers")
+    print("4. Add duty to soldier")
+    print("5. Update status of duty")
+    print("6. See soldier duties")
+    print("7. Exit")
 
 
 def get_user_choice() -> str:
