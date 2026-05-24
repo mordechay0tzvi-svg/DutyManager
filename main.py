@@ -110,3 +110,8 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+"""
+        https://github.com/mordechay0tzvi-svg/DutyManager.git
+"""
