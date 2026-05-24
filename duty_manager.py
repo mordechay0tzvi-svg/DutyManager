@@ -41,4 +41,6 @@ def get_soldier_duties(soldier_id: int) -> list:
     soldier = find_soldier_by_id(soldier_id)
     if soldier is None:
         raise ValueError("Soldier doesn't exist")
+    if soldier['duties'] is None:
+        print('soldier has no duties')
     return soldier['duties']
